@@ -25,6 +25,10 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
+// Animes
+app.use('/animes', require('./routes/animes.router'))
+
+
 
 // Server
 app.listen(process.env.PORT, () => {
