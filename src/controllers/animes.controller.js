@@ -6,7 +6,13 @@ const getAnimes = async(req, res) => {
 }
 
 const putAnimes = async(req, res) => {
+    // Parametros de la url
+    const {id} = req.params
+    // Datos del formulario body-parser
+    const { img } = req.body
 
+    await Anime.findByIdAndUpdate(id, {img}, {new:true})
+    res.redirect('/animes')
 }
 
 module.exports = { getAnimes, putAnimes }
